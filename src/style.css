@@ -58,3 +58,27 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
+.cards-section {
+  margin: 3rem auto;
+  width: 95%;
+  background-color: var(--primary);
+}
+
+.cards-section h1 {
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card-boxes {
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
