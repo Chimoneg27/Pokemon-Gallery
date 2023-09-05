@@ -1,12 +1,27 @@
-.hello {
-  color: red;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.icon1 {
-  width: 3rem;
-  height: 3rem;
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  background-color: rgb(143, 143, 143);
+:root {
+  --text: #fcf3f8;
+  --background: #040103;
+  --primary: #aae9c3;
+  --secondary: #071917;
+  --accent: #a5e59e;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  width: 100%;
+  border: 2px solid var(--background);
 }
