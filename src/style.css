@@ -91,14 +91,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
-  height: 200px;
+  height: 260px;
   width: 250px;
   margin-top: 2rem;
+  padding: 1rem;
 }
 
 .poke-dex h2 {
-  margin-top: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .poke-dex ul {
@@ -129,4 +132,71 @@ body {
   width: 50%;
   padding: 0.5rem;
   margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  position: relative;
+}
+
+.popup h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.popup img {
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--secondary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.closePopupBtn {
+  background-color: inherit;
+  color: var(--secondary);
+  font-weight: bold;
+  border: none;
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  position: absolute;
+
+  /* top: 2%; */
+  right: 3%;
+  font-size: 3rem;
+}
+
+.popupBtn {
+  padding: 0.5rem;
+  width: 40%;
+  border: none;
+  background-color: var(--accent);
+  color: var(--background);
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-weight: 700;
+}
+
+.popupDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0.1rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0.1rem;
 }
