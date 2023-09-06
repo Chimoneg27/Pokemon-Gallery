@@ -1,4 +1,6 @@
 import './style.css';
+import getCardTypes from './modules/getCardTypes.js';
+import shortArray from './modules/shorterArray.js';
 
 let cardBoxes = document.querySelector('.card-boxes');
 
@@ -39,12 +41,12 @@ const renderPokemonData = (pokeData) => {
     pokemonName.innerText = pokeData.name;
     pokeCard.appendChild(pokemonName);
 
-    let moves = shorterArr(pokeData.moves);
+    let moves = shorterArray(pokeData.moves);
     console.log(moves)
     let pokeType = document.createElement('ul');
     pokeCard.appendChild(pokeType);
 
-    generatePokeTypes(pokeData.types, pokeType);
+    getCardTypes(pokeData.types, pokeType)
 
     pokeCard.innerHTML += `
     <p>#${pokeData.id}</p>
@@ -52,19 +54,7 @@ const renderPokemonData = (pokeData) => {
 
     cardBoxes.appendChild(pokeCard);
 }
-// getCardType
-const generatePokeTypes = (types, ul) => {
-    types.forEach((type) => {
-        let typeLi = document.createElement('li');
-        typeLi.innerText = type['type']['name'];
-        ul.append(typeLi)
-    })
-}
 
-const shorterArr = (moveSet) => {
-    let shortArr = moveSet.slice(0, 3);
-    return shortArr;
-}
 // getCardImages
 const pokemonImage = (pokeID, container) => {
     let image = document.createElement('img');
