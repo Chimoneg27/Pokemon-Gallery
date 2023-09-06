@@ -60,8 +60,8 @@ body {
 }
 
 .cards-section {
-  margin: 3rem auto;
-  width: 95%;
+  margin: 3rem 0;
+  width: 100%;
   background-color: var(--primary);
 }
 
@@ -75,12 +75,11 @@ body {
 .card-boxes {
   font-family: 'Poppins', 'Times New Roman', Times, serif;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .poke-dex {
@@ -90,10 +89,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
-  gap: 0.45rem;
-  height: 350px;
+  padding: 0.25rem; 
+  height: 200px;
   width: 250px;
+  margin-top: 2rem;
 }
 
 .poke-dex h2 {
