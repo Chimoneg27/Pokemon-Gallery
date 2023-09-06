@@ -1,6 +1,6 @@
 import './style.css';
 import getCardTypes from './modules/getCardTypes.js';
-import shortArray from './modules/shorterArray.js';
+import shorterArray from './modules/shorterArray.js';
 
 let cardBoxes = document.querySelector('.card-boxes');
 
