@@ -1,6 +1,5 @@
 import './style.css';
 import getCardTypes from './modules/getCardTypes.js';
-import shorterArray from './modules/shorterArray.js';
 
 const cardBoxes = document.querySelector('.card-boxes');
 
@@ -16,15 +15,13 @@ const pokemonImage = (pokeID, container) => {
 const renderPokemonData = (pokeData) => {
   const pokeCard = document.createElement('div');
   pokeCard.classList.add('poke-dex');
-  // console.log(pokeData.moves);
   pokemonImage(pokeData.id, pokeCard);
 
   const pokemonName = document.createElement('h2');
   pokemonName.innerText = pokeData.name;
   pokeCard.appendChild(pokemonName);
 
-  const moves = shorterArray(pokeData.moves);
-  console.log(moves);
+  //   const moves = shorterArray(pokeData.moves);
   const pokeType = document.createElement('ul');
   pokeCard.appendChild(pokeType);
 
@@ -45,9 +42,7 @@ const getMoreInfo = (pokemon) => {
     .then((pokeData) => {
       renderPokemonData(pokeData);
     })
-    .catch((error) => {
-      console.error('Error fetching more info:', error);
-    });
+    .catch((error) => error.message);
 };
 
 const getPokemon = async () => {
@@ -59,8 +54,9 @@ const getPokemon = async () => {
     pokeArray.forEach((pokemon) => {
       getMoreInfo(pokemon);
     });
+    return pokeArray;
   } catch (error) {
-    console.error('Error fetching data:', error);
+    return error.message;
   }
 };
 
