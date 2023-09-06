@@ -29,6 +29,7 @@ body {
   padding: 1rem;
   font-family: 'Roboto', 'Times New Roman', Times, serif;
   width: 100%;
+  margin-top: 2rem;
   border: 2px solid var(--background);
 }
 
@@ -60,9 +61,10 @@ body {
 }
 
 .cards-section {
-  margin: 3rem 0;
+  margin: 3rem auto;
   width: 100%;
   background-color: var(--primary);
+  padding: 1rem;
 }
 
 .cards-section h1 {
@@ -108,4 +110,23 @@ body {
   display: flex;
   list-style: none;
   gap: 0.2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  margin: 0 auto;
+  z-index: 3;
+  background-color: hsla(173, 56%, 6%, 0.63);
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  background-color: var(--primary);
+  width: 50%;
+  padding: 0.5rem;
+  margin: 4rem auto;
 }
