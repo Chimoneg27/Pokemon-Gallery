@@ -23,7 +23,7 @@ body {
 }
 
 #footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   padding: 1rem;
@@ -81,4 +81,32 @@ body {
     gap: 1rem;
     padding: 1rem;
     width: 100%;
+}
+
+.poke-dex {
+  background-color: var(--secondary);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  gap: 0.45rem;
+  height: 350px;
+  width: 250px;
+}
+
+.poke-dex h2 {
+  margin-top: 0;
+}
+
+.poke-dex ul {
+  width: 80%;
+  height: 50px;
+}
+
+.types {
+  display: flex;
+  list-style: none;
+  gap: 0.2rem;
 }
