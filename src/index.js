@@ -12,19 +12,33 @@ const pokemonImage = (pokeID, container) => {
 
 const openPopup = (pokeData) => {
   const modalBox = document.querySelector('.modal');
+  const detailsDiv = document.createElement('div');
+  const left = document.createElement('div');
+  left.classList.add('left');
+  detailsDiv.classList.add('popupDetails');
   modalBox.innerHTML = `
       <div class="popup">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeData.id}.png" alt="${pokeData.name}" />
-          <h3>${pokeData.name}</h3>
-          <p>#${pokeData.id}</p>
-          <button class="closePopupBtn">Close</button>
+          <h2>${pokeData.name}</h2>
+          <button class="closePopupBtn">&times;</button>
       </div>
   `;
   const popup = document.querySelector('.popup');
   const pokeType = document.createElement('ul');
-  pokeType.innerHTML = 'Type(s)';
+  pokeType.innerHTML = 'Type(s): ';
   pokeType.classList.add('types');
-  popup.appendChild(pokeType);
+  detailsDiv.innerHTML = `
+      <div class='right'>
+      <p>Region: Kanto</p>
+      </div>
+  `;
+  // detailsDiv.appendChild(pokeType);
+  left.innerHTML = `
+  <p>Rank: #${pokeData.id}</p>
+  `;
+  detailsDiv.appendChild(left);
+  left.appendChild(pokeType);
+  popup.appendChild(detailsDiv);
 
   getCardTypes(pokeData.types, pokeType);
 
