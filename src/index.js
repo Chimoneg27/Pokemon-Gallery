@@ -8,6 +8,15 @@ import shorterArray from './modules/shorterArray.js';
 import countComments from './modules/countComment.js';
 import postLikes from './modules/postLikes.js';
 import fetchLikes from './modules/fetchLikes.js';
+import itemsCounter from './modules/itemsCounter.js';
+
+
+
+document.addEventListener("DOMContentLoaded",async()=>{
+  const countItems= await itemsCounter();
+  const itemsDisplay= document.querySelector(".home-items");
+  itemsDisplay.innerHTML=`SpaceShips (${countItems})`;
+})
 
 const cardBoxes = document.querySelector('.card-boxes');
 const logo = document.querySelector('.logo');
@@ -124,6 +133,7 @@ const openPopup = async (pokeData) => {
   modalBox.style.display = 'flex';
 };
 
+
 const renderPokemonData = async (pokeData) => {
   const pokeCard = document.createElement('div');
   pokeCard.classList.add('poke-dex');
@@ -179,6 +189,8 @@ const renderPokemonData = async (pokeData) => {
   handleLikePost();
   displayLikes();
 };
+
+
 
 const getMoreInfo = (pokemon) => {
   const sourceUrl = pokemon.url;
