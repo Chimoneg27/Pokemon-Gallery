@@ -1,5 +1,7 @@
 import './style.css';
 import getCardTypes from './modules/getCardTypes.js';
+import postLikes from './modules/postLikes.js';
+import fetchLikes from './modules/fetchLikes.js';
 
 const cardBoxes = document.querySelector('.card-boxes');
 // getCardImages
@@ -51,14 +53,37 @@ const openPopup = (pokeData) => {
 };
 
 // renderFetchedData
-const renderPokemonData = (pokeData) => {
+const renderPokemonData = async (pokeData) => {
   const pokeCard = document.createElement('div');
   pokeCard.classList.add('poke-dex');
   pokemonImage(pokeData.id, pokeCard);
 
-  const pokemonName = document.createElement('h2');
-  pokemonName.innerText = pokeData.name;
-  pokeCard.appendChild(pokemonName);
+  pokeCard.innerHTML += `
+  <div class="likes">
+    <p class="poke-name">${pokeData.name}</p>
+    <div>
+     <span class='likes-btn'><i class="far fa-heart" aria-hidden="true"></i></span>
+    </div>
+  </div>  
+  `;
+
+  // display likes
+  const likesDisplay = document.createElement('p');
+  const displayLikes = async () => {
+    const dataLikes = await fetchLikes();
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('contain');
+    let pokeLikes = 0;
+    const likes = dataLikes.find((like) => like.item_id === pokeData.id);
+    likesDisplay.classList.add('likes-counter');
+    if (likes) {
+      pokeLikes = likes.likes;
+    }
+
+    likesDisplay.textContent = `${pokeLikes} likes`;
+    containerDiv.appendChild(likesDisplay);
+    pokeCard.appendChild(containerDiv);
+  };
 
   pokeCard.innerHTML += `
       <button class='popupBtn'>Comment</button>
@@ -70,6 +95,19 @@ const renderPokemonData = (pokeData) => {
   popupBtn.addEventListener('click', () => {
     openPopup(pokeData);
   });
+
+  // post likes and update
+  const handleLikePost = async () => {
+    const likesBtn = pokeCard.querySelector('.likes-btn');
+    likesDisplay.innerHTML = '';
+    const likesObj = { item_id: pokeData.id };
+    likesBtn.addEventListener('click', async () => {
+      await postLikes(likesObj);
+      await displayLikes();
+    });
+  };
+  handleLikePost();
+  displayLikes();
 };
 
 // getMoreCardInfo;

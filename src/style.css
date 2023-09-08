@@ -95,6 +95,37 @@ body {
   width: 250px;
   margin-top: 2rem;
   padding: 1rem;
+  position: relative;
+}
+
+.likes {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  margin: 2rem;
+}
+
+.poke-name {
+  font-size: 1rem;
+}
+
+.contain {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.likes-counter {
+  font-size: 1rem;
+  color: var(--text);
+  top: -60px;
+  position: absolute;
+  width: 100%;
+  right: -100px;
+}
+
+.fa-heart {
+  font-size: 1.4rem;
 }
 
 .poke-dex h2 {
