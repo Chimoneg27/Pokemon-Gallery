@@ -113,6 +113,7 @@ body {
   margin-top: 2rem;
   padding: 1rem;
   position: relative;
+  border-radius: 8px;
 }
 
 .likes {
@@ -320,6 +321,12 @@ body {
   padding: 0.5rem;
 }
 
+.popup input::placeholder {
+  font-weight: bold;
+  font-size: 0.86rem;
+  color: var(--secondary);
+}
+
 form button {
   background-color: var(--secondary);
   color: var(--text);
@@ -351,9 +358,29 @@ form button {
 }
 
 .opinions {
+  overflow-y: scroll;
   width: 85%;
-  padding: 0.65rem;
+  padding: 2rem;
   font-size: 1rem;
   color: var(--secondary);
   font-weight: bold;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.opinions::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.opinions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.opinions::-webkit-scrollbar-thumb {
+  background-color: inherit;
+  border-radius: 8px;
+}
+
+.opinions:hover::-webkit-scrollbar-thumb {
+  background-color: inherit;
 }
