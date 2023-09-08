@@ -17,20 +17,26 @@ html {
 }
 
 body {
-  background-color: rgb(143, 143, 143);
+  background-color: var(--background);
   font-size: 10px;
   width: 100%;
+  position: relative;
 }
 
 #footer {
-  position: fixed;
+  position: absolute;
+  top: 100%;
   bottom: 0;
   left: 0;
   padding: 1rem;
   font-family: 'Roboto', 'Times New Roman', Times, serif;
   width: 100%;
   margin-top: 2rem;
-  border: 2px solid var(--background);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  height: 3rem;
 }
 
 .navigation {
@@ -38,11 +44,15 @@ body {
   gap: 2rem;
   font-size: 1.2rem;
   align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 
 .navigation a {
   text-decoration: none;
-  color: #000;
+  color: var(--text);
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
 }
 
 .navigation a:active {
@@ -50,9 +60,15 @@ body {
 }
 
 .logo {
-  border: 1px solid #000;
-  padding: 0.8rem;
   border-radius: 100%;
+  width: auto;
+  height: auto;
+}
+
+.logo img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: inherit;
 }
 
 .container {
@@ -65,6 +81,7 @@ body {
   width: 100%;
   background-color: var(--primary);
   padding: 1rem;
+  position: relative;
 }
 
 .cards-section h1 {
@@ -78,7 +95,7 @@ body {
   font-family: 'Poppins', 'Times New Roman', Times, serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   margin: 0 auto;
   width: 80%;
@@ -126,6 +143,7 @@ body {
 
 .fa-heart {
   font-size: 1.4rem;
+  border-radius: 8px;
 }
 
 .poke-dex h2 {
@@ -138,6 +156,31 @@ body {
 .poke-dex ul {
   width: 80%;
   height: 50px;
+}
+
+.poke-dex:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 .types {
@@ -159,6 +202,8 @@ body {
 }
 
 .popup {
+  overflow-y: auto;
+  scrollbar-width: thin;
   background-color: var(--primary);
   width: 50%;
   padding: 0.5rem;
@@ -169,6 +214,25 @@ body {
   align-items: center;
   font-family: 'Poppins', 'Times New Roman', Times, serif;
   position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.popup::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background-color: inherit;
+  border-radius: 8px;
+}
+
+.popup:hover::-webkit-scrollbar-thumb {
+  background-color: inherit;
 }
 
 .popup h2 {
@@ -191,13 +255,12 @@ body {
   border: none;
   font-family: 'Poppins', 'Times New Roman', Times, serif;
   position: absolute;
-
-  /* top: 2%; */
   right: 3%;
   font-size: 3rem;
 }
 
 .popupBtn {
+  border-radius: 8px;
   padding: 0.5rem;
   width: 40%;
   border: none;
@@ -230,4 +293,67 @@ body {
   font-weight: bold;
   justify-content: space-between;
   padding: 0.1rem;
+}
+
+.popup form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0.65rem;
+}
+
+.popup textarea {
+  width: 60%;
+  height: 5rem;
+  border: none;
+  padding: 0.25rem;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: var(--background);
+}
+
+.popup input {
+  width: 40%;
+  border: none;
+  padding: 0.5rem;
+}
+
+form button {
+  background-color: var(--secondary);
+  color: var(--text);
+  font-weight: bold;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  width: 40%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.commentBox {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userComments {
+  background-color: pink;
+  width: 80%;
+}
+
+.userThoughts {
+  width: 85%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.opinions {
+  width: 85%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight: bold;
 }
