@@ -12,7 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.6.4",
     "css-loader": "^6.8.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",

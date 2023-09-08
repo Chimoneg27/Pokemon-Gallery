@@ -11,7 +11,6 @@ const postLikes = async (data) => {
     const response = await postData.json();
     return response.ok;
   } catch (error) {
-    console.error('Error:', error);
     return error.message;
   }
 };
