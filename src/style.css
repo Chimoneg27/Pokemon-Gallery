@@ -1,0 +1,390 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #fcf3f8;
+  --background: #040103;
+  --primary: #aae9c3;
+  --secondary: #071917;
+  --accent: #a5e59e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  font-size: 10px;
+  width: 100%;
+  position: relative;
+}
+
+#footer {
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  width: 100%;
+  margin-top: 2rem;
+  border: 2px solid var(--accent);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+}
+
+.navigation a:active {
+  text-decoration: underline;
+}
+
+.logo {
+  border-radius: 100%;
+  width: auto;
+  height: auto;
+}
+
+.logo img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: inherit;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cards-section {
+  margin: 3rem auto;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 1rem;
+  position: relative;
+}
+
+.cards-section h1 {
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card-boxes {
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.poke-dex {
+  background-color: var(--secondary);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 260px;
+  width: 250px;
+  margin-top: 2rem;
+  padding: 1rem;
+  position: relative;
+  border-radius: 8px;
+}
+
+.likes {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  margin: 2rem;
+}
+
+.poke-name {
+  font-size: 1rem;
+}
+
+.contain {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.likes-counter {
+  font-size: 1rem;
+  color: var(--text);
+  top: -60px;
+  position: absolute;
+  width: 100%;
+  right: -100px;
+}
+
+.fa-heart {
+  font-size: 1.4rem;
+  border-radius: 8px;
+}
+
+.poke-dex h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.poke-dex ul {
+  width: 80%;
+  height: 50px;
+}
+
+.poke-dex:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.types {
+  display: flex;
+  list-style: none;
+  gap: 0.2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  margin: 0 auto;
+  z-index: 3;
+  background-color: hsla(173, 56%, 6%, 0.63);
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  overflow-y: auto;
+  background-color: var(--primary);
+  width: 50%;
+  padding: 0.5rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.popup::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background-color: inherit;
+  border-radius: 8px;
+}
+
+.popup:hover::-webkit-scrollbar-thumb {
+  background-color: inherit;
+}
+
+.popup h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.popup img {
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--secondary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.closePopupBtn {
+  background-color: inherit;
+  color: var(--secondary);
+  font-weight: bold;
+  border: none;
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  position: absolute;
+  right: 3%;
+  font-size: 3rem;
+}
+
+.popupBtn {
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 40%;
+  border: none;
+  background-color: var(--accent);
+  color: var(--background);
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-weight: 700;
+}
+
+.popupDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0.1rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0.1rem;
+}
+
+.popup form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0.65rem;
+}
+
+.popup textarea {
+  width: 60%;
+  height: 5rem;
+  border: none;
+  padding: 0.25rem;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: var(--background);
+}
+
+.popup input {
+  width: 40%;
+  border: none;
+  padding: 0.5rem;
+}
+
+.popup input::placeholder {
+  font-weight: bold;
+  font-size: 0.86rem;
+  color: var(--secondary);
+}
+
+form button {
+  background-color: var(--secondary);
+  color: var(--text);
+  font-weight: bold;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  width: 40%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.commentBox {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userComments {
+  background-color: pink;
+  width: 80%;
+}
+
+.userThoughts {
+  width: 85%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.opinions {
+  overflow-y: scroll;
+  width: 85%;
+  padding: 2rem;
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight: bold;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.opinions::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.opinions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.opinions::-webkit-scrollbar-thumb {
+  background-color: inherit;
+  border-radius: 8px;
+}
+
+.opinions:hover::-webkit-scrollbar-thumb {
+  background-color: inherit;
+}
