@@ -1,4 +1,4 @@
-# Garvin-Webpack-Template
+# Pokemon Gallery 
 Just a simple webpack template for my projects
 
 # 📗 Table of Contents
@@ -50,9 +50,9 @@ Just a simple webpack template for my projects
 
 - **[Pokemon Gallery](https://chimoneg27.github.io/Pokemon-Gallery/)**
 
-## 🚀  <a Video walkthrough name="live-demo"></a>
+##  <a Video walkthrough name="live-demo"></a>
 
-**[Video walkthrough](https://drive.google.com/file/d/1st8qL7RH1Prdjh1EDHG8eef8S9ifQxyd/view?usp=drive_link)**
+ - **[Video walkthrough](https://drive.google.com/file/d/1st8qL7RH1Prdjh1EDHG8eef8S9ifQxyd/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
